@@ -4,4 +4,4 @@ description: >-
   Personal website and project portfolio
 baseurl: ""
 url: "https://anaghabhavsar.github.io"
-theme: jekyll-theme-minimal
+theme: jekyll-theme-midnight
