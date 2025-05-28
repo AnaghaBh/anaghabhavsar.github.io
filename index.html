@@ -15,24 +15,50 @@
       color: #e6dbc6;
       font-family: Georgia, serif;
       margin: 0;
-      padding: 40px 20px;
-      text-align: center;
+      padding: 0;
+    }
+
+    /* NAVIGATION BAR */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      background-color: #190909;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      font-size: 1rem;
+      border-bottom: 1px solid #e6dbc620;
+    }
+
+    .navbar a {
+      colour: #e6dbc6;
+      text-decoration: none;
+      font-family: Georgia, serif;
+      transition: opacity 0.3s;
+    }
+
+    .navbar a:hover {
+      opacity: 0.7;
     }
 
     h1 {
       font-family: 'TAN Harmoni', serif;
       font-size: 6rem;
       margin-bottom: 10px;
-      font-weight: 300;
+      text-align: center;
+      margin-top: 40px;
     }
 
     .contact-info {
       font-size: 1rem;
+      text-align: center;
       margin-bottom: 60px;
     }
 
     .contact-info a {
-      color: #e6dbc6;
+      colour: #e6dbc6;
       text-decoration: none;
     }
 
@@ -63,6 +89,15 @@
   </style>
 </head>
 <body>
+
+  <div class="navbar">
+    <a href="#">About</a>
+    <a href="#">CV</a>
+    <a href="#">Projects</a>
+    <a href="#">Interests</a>
+    <a href="#">Blog</a>
+  </div>
+
   <h1>Anagha Bhavsar</h1>
 
   <div class="contact-info">
@@ -74,5 +109,6 @@
   <div class="typewriter">
     Hello! I am Anagha. I love decoding human cognition.
   </div>
+
 </body>
 </html>
