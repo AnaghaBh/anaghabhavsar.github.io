@@ -21,36 +21,22 @@
       transition: background-color 0.3s, color 0.3s;
     }
 
-    h1 {
-      font-family: 'TAN Harmoni', serif;
-      font-size: 5rem;
-      text-align: center;
-      margin-top: 100px;
-      margin-bottom: 60px;
-      font-weight: 300;
-    }
-
-    .top-right-container {
-      position: fixed;
-      top: 20px;
-      right: 20px;
+    .navbar {
       display: flex;
+      justify-content: flex-end;
       align-items: center;
-      flex-direction: row-reverse;
       gap: 25px;
-      font-family: Georgia, serif;
+      padding: 20px;
       font-size: 1.1rem;
-      z-index: 1000;
     }
 
-    .sidebar a {
+    .navbar a {
       text-decoration: none;
       color: #e6dbc6;
-      margin-left: 20px;
       transition: text-decoration 0.2s ease;
     }
 
-    .sidebar a:hover {
+    .navbar a:hover {
       text-decoration: underline;
     }
 
@@ -68,13 +54,65 @@
       color: #190909;
     }
 
-    /* Dark mode styles */
+    h1 {
+      font-family: 'TAN Harmoni', serif;
+      font-size: 6rem;
+      text-align: center;
+      margin-top: 80px;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 1rem;
+    }
+
+    .contact-info a {
+      color: #e6dbc6;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .typewriter {
+      font-family: Georgia, serif;
+      font-size: 1.5rem;
+      margin: 0 auto 40px auto;
+      width: 25ch;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #e6dbc6;
+      animation: typing 4s steps(25, end) forwards, blink 0.75s step-end infinite;
+      text-align: left;
+      padding-left: 20px;
+      max-width: 600px;
+    }
+
+    .highlight {
+      font-weight: bold;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 25ch }
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: #e6dbc6; }
+    }
+
+    /* Dark Mode */
     .dark-mode {
       background-color: #e6dbc6;
       color: #190909;
     }
 
-    .dark-mode .sidebar a {
+    .dark-mode a {
       color: #190909;
     }
 
@@ -87,21 +125,33 @@
       background-color: #190909;
       color: #e6dbc6;
     }
+
+    .dark-mode .typewriter {
+      border-right: 2px solid #190909;
+    }
   </style>
 </head>
 <body>
-  <div class="top-right-container">
+  <div class="navbar">
     <button id="toggleDarkMode" aria-label="Toggle dark mode">Light Mode</button>
-    <nav class="sidebar" role="navigation" aria-label="Primary navigation">
-      <a href="#">About</a>
-      <a href="#">Experience</a>
-      <a href="#">Projects</a>
-      <a href="#">Interests</a>
-      <a href="#">CV</a>
-    </nav>
+    <a href="#">CV</a>
+    <a href="#">Interests</a>
+    <a href="#">Projects</a>
+    <a href="#">Experience</a>
+    <a href="#">About</a>
   </div>
 
   <h1>Anagha Bhavsar</h1>
+
+  <div class="contact-info">
+    anagha.bhavsar_ug25@ashoka.edu.in · Navi Mumbai, Maharashtra, India |
+    <a href="https://www.linkedin.com/in/anagha-bhavsar-0b0a17236/" target="_blank">LinkedIn</a> |
+    <a href="https://github.com/AnaghaBh" target="_blank">GitHub</a>
+  </div>
+
+  <div class="typewriter">
+    I Love De<span class="highlight">coding</span> Human Cognition
+  </div>
 
   <script>
     const toggleButton = document.getElementById('toggleDarkMode');
