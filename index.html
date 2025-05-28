@@ -46,44 +46,6 @@
       font-weight: 300;
     }
 
-    .typewriter {
-      font-family: Georgia, serif;
-      font-size: 1.5rem;
-      text-align: center;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid #e6dbc6;
-      animation: typing 4s steps(25, end) forwards, blink 0.75s step-end infinite;
-      width: 25ch;
-      margin: 0 auto 40px auto;
-      display: block;
-    }
-
-    .highlight {
-      font-weight: bold;
-    }
-
-    .typewriter a {
-      display: inline-block;
-      color: #e6dbc6;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .typewriter a:hover {
-      text-decoration: underline;
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 25ch }
-    }
-
-    @keyframes blink {
-      from, to { border-color: transparent }
-      50% { border-color: #e6dbc6; }
-    }
-
     /* VS Code Editor Styling */
     .vscode-window {
       width: 90%;
@@ -92,16 +54,19 @@
       background-color: #1e1e1e;
       border-radius: 8px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
-      font-family: 'Courier New', monospace;
+      font-family: 'Consolas', 'Courier New', monospace;
       color: #d4d4d4;
+      text-align: left;
+      user-select: none;
     }
 
     .window-header {
-      background: #333;
-      padding: 10px;
+      background: #2d2d2d;
+      padding: 10px 14px;
       border-radius: 8px 8px 0 0;
       display: flex;
       gap: 8px;
+      align-items: center;
     }
 
     .dot {
@@ -109,6 +74,7 @@
       height: 12px;
       border-radius: 50%;
       display: inline-block;
+      box-shadow: 0 0 3px rgba(0,0,0,0.5);
     }
 
     .red { background-color: #ff5f56; }
@@ -116,15 +82,32 @@
     .green { background-color: #27c93f; }
 
     .editor {
-      padding: 20px;
-      font-size: 1.2rem;
+      padding: 20px 30px;
+      font-size: 1.25rem;
       white-space: pre-wrap;
-      min-height: 120px;
+      min-height: 140px;
+      line-height: 1.4;
+      background-color: #1e1e1e;
+      border-radius: 0 0 8px 8px;
+      box-sizing: border-box;
+      position: relative;
+      overflow-wrap: break-word;
     }
 
-    #typed-text {
-      color: #9cdcfe;
+    /* Blinking cursor effect */
+    #typed-text::after {
+      content: '|';
+      animation: blink 1s steps(2, start) infinite;
+      color: #d4d4d4;
+      font-weight: bold;
+      margin-left: 2px;
     }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
   </style>
 </head>
 <body>
@@ -135,20 +118,16 @@
     <a href="https://github.com/AnaghaBh" target="_blank">GitHub</a>
   </div>
 
-  <div class="typewriter">
-    <a href="#">I</a> Love De<span class="highlight"><a href="#">coding</a></span> <a href="#">Human Cognition</a>
-  </div>
-
   <!-- Fake VS Code Editor with Typing -->
   <section id="fake-vscode">
-    <div class="vscode-window">
-      <div class="window-header">
-        <span class="dot red"></span>
-        <span class="dot yellow"></span>
-        <span class="dot green"></span>
+    <div class="vscode-window" aria-label="Code editor">
+      <div class="window-header" role="toolbar" aria-label="Window controls">
+        <span class="dot red" title="Close"></span>
+        <span class="dot yellow" title="Minimise"></span>
+        <span class="dot green" title="Maximise"></span>
       </div>
-      <div class="editor">
-        <pre><code id="typed-text">// </code></pre>
+      <div class="editor" aria-live="polite" aria-atomic="false" aria-relevant="text">
+        <pre id="typed-text">// </pre>
       </div>
     </div>
   </section>
