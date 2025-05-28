@@ -21,12 +21,13 @@
     .contact-info a:hover {
       text-decoration: underline;
     }
+
     @font-face {
       font-family: 'TAN Harmoni';
       src: url('fonts/Harmoni.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
-     }
+    }
 
     body {
       background-color: #190909;
@@ -53,9 +54,8 @@
       overflow: hidden;
       border-right: 2px solid #e6dbc6;
       animation: typing 4s steps(25, end) forwards, blink 0.75s step-end infinite;
-      width: 25ch; /* exact width matching characters */
-      margin: 0 auto 40px auto; /* This centres the div */
-      text-align: center;       /* This centres the text inside */
+      width: 25ch;
+      margin: 0 auto 40px auto;
       display: block;
     }
 
@@ -63,20 +63,15 @@
       font-weight: bold;
     }
 
-    /* Links for clickable words */
     .typewriter a {
       display: inline-block;
       color: #e6dbc6;
       text-decoration: none;
       cursor: pointer;
     }
+
     .typewriter a:hover {
       text-decoration: underline;
-    }
-
-    section {
-      margin-bottom: 100px;
-      padding-top: 50px; /* to offset anchor jump */
     }
 
     @keyframes typing {
@@ -88,49 +83,90 @@
       from, to { border-color: transparent }
       50% { border-color: #e6dbc6; }
     }
+
+    /* VS Code Editor Styling */
+    .vscode-window {
+      width: 90%;
+      max-width: 800px;
+      margin: 60px auto;
+      background-color: #1e1e1e;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+      font-family: 'Courier New', monospace;
+      color: #d4d4d4;
+    }
+
+    .window-header {
+      background: #333;
+      padding: 10px;
+      border-radius: 8px 8px 0 0;
+      display: flex;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .red { background-color: #ff5f56; }
+    .yellow { background-color: #ffbd2e; }
+    .green { background-color: #27c93f; }
+
+    .editor {
+      padding: 20px;
+      font-size: 1.2rem;
+      white-space: pre-wrap;
+      min-height: 120px;
+    }
+
+    #typed-text {
+      color: #9cdcfe;
+    }
   </style>
 </head>
 <body>
   <h1>Anagha Bhavsar</h1>
   <div class="contact-info">
-        anagha.bhavsar_ug25@ashoka.edu.in · Navi Mumbai, Maharashtra, India |
-        <a href="https://www.linkedin.com/in/anagha-bhavsar-0b0a17236/" target="_blank">LinkedIn</a> |
-        <a href="https://github.com/AnaghaBh" target="_blank">GitHub</a>
+    anagha.bhavsar_ug25@ashoka.edu.in · Navi Mumbai, Maharashtra, India |
+    <a href="https://www.linkedin.com/in/anagha-bhavsar-0b0a17236/" target="_blank">LinkedIn</a> |
+    <a href="https://github.com/AnaghaBh" target="_blank">GitHub</a>
   </div>
-  
+
   <div class="typewriter">
-    <a href="#section-i">I</a> Love De<span class="highlight"><a href="#section-coding">coding</a></span> <a href="#section-human-cognition">Human Cognition</a>
+    <a href="#">I</a> Love De<span class="highlight"><a href="#">coding</a></span> <a href="#">Human Cognition</a>
   </div>
 
-  <!-- Subsections -->
-  <section id="section-i">
-    <h2>I</h2>
-    <p>This is the section for "I". You can put your content here.</p>
-  </section>
-
-  <section id="section-love">
-    <h2>Love</h2>
-    <p>This is the section for "Love". You can put your content here.</p>
-  </section>
-
-  <section id="section-coding">
-    <h2>Coding</h2>
-    <p>This is the section for "Coding". You can put your content here.</p>
-  </section>
-
-  <section id="section-human-cognition">
-    <h2>Human Cognition</h2>
-    <p>This is the section for "Human Cognition". You can put your content here.</p>
+  <!-- Fake VS Code Editor with Typing -->
+  <section id="fake-vscode">
+    <div class="vscode-window">
+      <div class="window-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
+      <div class="editor">
+        <pre><code id="typed-text">// </code></pre>
+      </div>
+    </div>
   </section>
 
   <script>
-    
-    document.querySelector('.typewriter').innerHTML = `
-      <a href="#section-i">I</a> 
-      <a href="#section-love">Love</a> 
-      De<span class="highlight"><a href="#section-coding">coding</a></span> 
-      <a href="#section-human-cognition">Human Cognition</a>
-    `;
+    const text = "Hello! I am Anagha. I love decoding human cognition.";
+    const element = document.getElementById("typed-text");
+    let index = 0;
+
+    function typeLine() {
+      if (index < text.length) {
+        element.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeLine, 80);
+      }
+    }
+
+    window.addEventListener('load', typeLine);
   </script>
 </body>
 </html>
