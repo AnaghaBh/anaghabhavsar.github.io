@@ -10,36 +10,38 @@
       src: url('fonts/Harmoni.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
-     }
+    }
 
+    /* Body and centering */
     body {
       background-color: #281010;
       color: #e6dbc6;
       margin: 0;
+      height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: Georgia, serif;
+      justify-content: center; /* vertical center */
+      align-items: center;     /* horizontal center */
+      font-family: 'TAN Harmoni', Georgia, serif;
+      text-align: center;
       padding: 0 20px;
     }
 
-   h1 {
+    h1 {
       font-family: 'TAN Harmoni', serif;
-      font-size: 5rem; /* bigger font */
+      font-size: 5rem;
       margin-bottom: 40px;
     }
 
-
+    /* Typewriter styles */
     .typewriter {
       font-family: Georgia, serif;
       font-size: 1.5rem;
       white-space: nowrap;
-      overflow: hidden;
+      overflow: visible; /* allow full text */
       border-right: 2px solid #e6dbc6;
-      animation: typing 4s steps(25, end) forwards, blink 0.75s step-end infinite;
-      width: 25ch; /* exact width matching characters */
+      width: max-content; /* width fits content */
+      animation: typing 4s steps(30, end) forwards, blink 0.75s step-end infinite;
       margin-bottom: 40px;
     }
 
@@ -47,40 +49,47 @@
       font-weight: bold;
     }
 
-    /* Links for clickable words */
+    /* Links inside typewriter text */
     .typewriter a {
       color: #e6dbc6;
       text-decoration: none;
       cursor: pointer;
     }
+
     .typewriter a:hover {
       text-decoration: underline;
     }
 
     section {
       margin-bottom: 100px;
-      padding-top: 50px; /* to offset anchor jump */
+      padding-top: 60px; /* offset anchor jump */
+      font-family: Georgia, serif;
+      color: #e6dbc6;
     }
 
+    /* Typing animation */
     @keyframes typing {
       from { width: 0 }
-      to { width: 25ch }
+      to { width: 30ch }
     }
 
     @keyframes blink {
-      from, to { border-color: transparent }
-      50% { border-color: #e6dbc6; }
+      0%, 100% { border-color: transparent }
+      50% { border-color: #e6dbc6 }
     }
   </style>
 </head>
 <body>
   <h1>Anagha Bhavsar</h1>
-  
-  <div class="typewriter">
-    <a href="#section-i">I</a> love de<span class="highlight"><a href="#section-decoding">coding</a></span> <a href="#section-human-cognition">Human Cognition</a>
+
+  <div class="typewriter" aria-label="I love decoding human cognition">
+    <a href="#section-i">I</a> 
+    <a href="#section-love">love</a> 
+    de<span class="highlight"><a href="#section-decoding">coding</a></span> 
+    <a href="#section-human-cognition">Human Cognition</a>
   </div>
 
-  <!-- Subsections -->
+  <!-- Sections for scrolling -->
   <section id="section-i">
     <h2>I</h2>
     <p>This is the section for "I". You can put your content here.</p>
@@ -101,18 +110,5 @@
     <p>This is the section for "Human Cognition". You can put your content here.</p>
   </section>
 
-  <script>
-    // Fix: Add "Love" clickable link inside the typewriter text
-    // The text was missing "Love" as a clickable word, adding now
-
-    // Replace typewriter text HTML dynamically to include Love link
-
-    document.querySelector('.typewriter').innerHTML = `
-      <a href="#section-i">I</a> 
-      <a href="#section-love">love</a> 
-      de<span class="highlight"><a href="#section-decoding">coding</a></span> 
-      <a href="#section-human-cognition">Human Cognition</a>
-    `;
-  </script>
 </body>
 </html>
