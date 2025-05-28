@@ -21,13 +21,14 @@
 
     h1 {
       font-family: 'TAN Harmoni', serif;
-      font-size: 5rem;
+      font-size: 6rem;
       margin-bottom: 10px;
+      font-weight: 300;
     }
 
     .contact-info {
       font-size: 1rem;
-      margin-bottom: 30px;
+      margin-bottom: 60px;
     }
 
     .contact-info a {
@@ -39,52 +40,15 @@
       text-decoration: underline;
     }
 
-    .dashboard {
-      max-width: 800px;
-      margin: 40px auto;
-      background-color: #2a1515;
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 0 20px rgba(230, 219, 198, 0.1);
-    }
-
-    .modules {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      margin-bottom: 30px;
-    }
-
-    .module {
-      background-color: #3a2020;
-      padding: 20px;
-      border-radius: 12px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
-    }
-
-    .console {
-      font-family: monospace;
-      font-size: 1.2rem;
+    .typewriter {
+      font-family: Georgia, serif;
+      font-size: 1.5rem;
       text-align: left;
-      background-color: #000;
-      colour: #e6dbc6;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 20px;
-      height: 150px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
-    }
-
-    .typed-text {
-      white-space: pre;
+      margin: 0 auto;
+      max-width: 600px;
+      white-space: nowrap;
       overflow: hidden;
       border-right: 2px solid #e6dbc6;
-      display: inline-block;
       animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
     }
 
@@ -100,23 +64,15 @@
 </head>
 <body>
   <h1>Anagha Bhavsar</h1>
+
   <div class="contact-info">
     anagha.bhavsar_ug25@ashoka.edu.in · Navi Mumbai, Maharashtra, India |
     <a href="https://www.linkedin.com/in/anagha-bhavsar-0b0a17236/" target="_blank">LinkedIn</a> |
     <a href="https://github.com/AnaghaBh" target="_blank">GitHub</a>
   </div>
 
-  <div class="dashboard">
-    <div class="modules">
-      <div class="module">Memory</div>
-      <div class="module">Attention</div>
-      <div class="module">Learning</div>
-      <div class="module">Bias Detection</div>
-    </div>
-
-    <div class="console">
-      <span class="typed-text">Hello! I am Anagha. I love decoding human cognition.</span>
-    </div>
+  <div class="typewriter">
+    Hello! I am Anagha. I love decoding human cognition.
   </div>
 </body>
 </html>
