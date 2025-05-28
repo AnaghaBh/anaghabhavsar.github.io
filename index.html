@@ -2,151 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anagha Bhavsar | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anagha Bhavsar</title>
+
   <style>
-    :root {
-      --bg-colour: #281010;
-      --text-colour: #f5f5dc;
-      --accent-purple: #a974ff;
-      --accent-blue: #4fa3f7;
-      --font-main: 'Raleway', sans-serif;
+    @font-face {
+      font-family: 'TAN Harmonica';
+      src: url('fonts/TAN-Harmonica.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
     }
 
     body {
+      background-color: #281010;
+      color: #e6dbc6;
       margin: 0;
-      background-colour: var(--bg-colour);
-      colour: var(--text-colour);
-      font-family: var(--font-main);
-      scroll-behavior: smooth;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Georgia, serif;
     }
 
-    header {
-      background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
-      padding: 2rem;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
+    h1 {
+      font-family: 'TAN Harmonica', serif;
       font-size: 3rem;
-      font-weight: 700;
+      margin-bottom: 20px;
     }
 
-    nav {
-      margin-top: 1rem;
-    }
-
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      colour: var(--text-colour);
-      font-weight: bold;
-      transition: colour 0.3s;
-    }
-
-    nav a:hover {
-      colour: var(--accent-blue);
-    }
-
-    section {
-      max-width: 800px;
-      margin: 4rem auto;
-      padding: 0 1rem;
+    .typewriter {
+      font-family: Georgia, serif;
+      font-size: 1.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #e6dbc6;
+      animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
     }
 
     .highlight {
-      colour: var(--accent-purple);
-    }
-
-    .project {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 1.5rem;
-      border-radius: 1rem;
-      margin-bottom: 2rem;
-      transition: transform 0.3s ease;
-    }
-
-    .project:hover {
-      transform: scale(1.02);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background-colour: #1c0b0b;
-      colour: #bbb;
-    }
-
-    button {
-      background: var(--accent-blue);
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      colour: #fff;
       font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s;
     }
 
-    button:hover {
-      background: var(--accent-purple);
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 38ch }
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: #e6dbc6; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Anagha Bhavsar</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#publications">Publications</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>BSc in Computer Science with minors in Psychology & Media Studies from Ashoka University. I love building projects at the intersection of technology, cognition, and social impact. Passionate about neural mechanisms, data science, and responsible AI.</p>
-  </section>
-
-  <section id="projects">
-    <h2 class="highlight">Projects</h2>
-    <div class="project">
-      <h3>Propaganda Detection</h3>
-      <p>Custom-built model using emotional strength, rhetorical devices, profanity and message length to detect political propaganda on social media. Analysed over 30,000 tweets.</p>
-    </div>
-    <div class="project">
-      <h3>Public Sentiment vs Gillette Ad</h3>
-      <p>Analysed the reaction to the 2019 Gillette ad using a custom sentiment analysis model for slang-heavy social data. Built a classification model to predict campaign outcomes.</p>
-    </div>
-    <div class="project">
-      <h3>Memory & Attention Study</h3>
-      <p>Explored neural and computational models of memory under Prof. Debayan & Prof. Bittu. Studied LSTMs, Transformers, and AGI safety.</p>
-    </div>
-    <button onclick="alert('Explore full project code on GitHub!')">See Code</button>
-  </section>
-
-  <section id="publications">
-    <h2 class="highlight">Publications</h2>
-    <ul>
-      <li><a href="https://anagha-b.medium.com/self-ish-love-64774a64c18" target="_blank">Self(ish)-love</a></li>
-      <li><a href="https://anagha-b.medium.com/rising-above-self-doubt-25bb3ccf4517" target="_blank">Rising above self-doubt</a></li>
-      <li><a href="https://anagha-b.medium.com/feminism-equality-or-superiority-ab05b6f46410" target="_blank">Feminism: Equality or Superiority</a></li>
-      <li><a href="https://anagha-b.medium.com/7-tips-for-a-constructive-critic-5c033413614d" target="_blank">7 Tips for a Constructive Critic</a></li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2 class="highlight">Contact</h2>
-    <p>Email: <a href="mailto:anagha.bhavsar_ug25@ashoka.edu.in">anagha.bhavsar_ug25@ashoka.edu.in</a></p>
-    <p>Phone: +91 7400097948</p>
-    <p>Location: Navi Mumbai, India</p>
-  </section>
-
-  <footer>
-    <p>© 2025 Anagha Bhavsar | Built with ❤️ in Navi Mumbai</p>
-  </footer>
+  <h1>Anagha Bhavsar</h1>
+  <div class="typewriter">
+    I love de<span class="highlight">coding</span> Human Cognition
+  </div>
 </body>
 </html>
