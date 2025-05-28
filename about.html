@@ -100,7 +100,22 @@
       text-shadow: 0 0 5px #e6dbc6;
       text-decoration: underline;
     }
+    .profile-pic {
+      display: block;
+      max-width: 180px;
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+      margin: 0 auto 30px;
+      border: 3px solid #e6dbc6;
+      box-shadow: 0 0 10px #e6dbc6aa;
+      transition: border-color 0.3s ease;
+    }
 
+    body.light-mode .profile-pic {
+      border-color: #333;
+      box-shadow: 0 0 10px #333aaa88;
+    }
     .content {
       max-width: 700px;
       margin: 0 auto;
@@ -159,6 +174,7 @@
   <h2>About Me</h2>
 
   <div class="content">
+    <img src="images/anagha.jpg" alt="Photo of Anagha Bhavsar" class="profile-pic" />
     <p>Hello! I'm Anagha, a curious learner who loves understanding how humans think, learn, and make decisions. My journey blends computer science, psychology, and neuroscience.</p>
     <p>I'm especially interested in how computational models can mimic cognitive processes like memory, attention, and perception. My goal is to contribute to ethical and human-aligned AI by drawing on insights from both brains and machines.</p>
     <p>Outside of academics, you'll find me reading essays, obsessing over typography, and being passionately curious about everything from evolutionary psychology to internet subcultures.</p>
