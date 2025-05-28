@@ -124,6 +124,40 @@
       font-size: 1.1rem;
       line-height: 1.6;
     }
+    .content-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  max-width: 900px;
+  margin: 40px auto 80px;
+  padding: 0 20px;
+  text-align: left;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  font-family: Georgia, serif;
+}
+
+.profile-pic {
+  max-width: 180px;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  border: 3px solid #e6dbc6;
+  box-shadow: 0 0 10px #e6dbc6aa;
+  flex-shrink: 0;
+  transition: border-color 0.3s ease;
+}
+
+.about-text p {
+  margin-bottom: 1.25rem;
+}
+
+body.light-mode .profile-pic {
+  border-color: #333;
+  box-shadow: 0 0 10px #333aaa88;
+}
+
 
     footer {
       text-align: centre;
@@ -173,11 +207,11 @@
 
   <h2>About Me</h2>
 
-  <div class="content">
+  <div class="content-flex">
     <img src="images/photo.jpg" alt="Photo of Anagha Bhavsar" class="profile-pic" />
     <p>Hello! I'm Anagha, a curious learner who loves understanding how humans think, learn, and make decisions. My journey blends computer science, psychology, and neuroscience.</p>
     <p>I'm especially interested in how computational models can mimic cognitive processes like memory, attention, and perception. My goal is to contribute to ethical and human-aligned AI by drawing on insights from both brains and machines.</p>
-    <p>Outside of academics, you'll find me reading essays, obsessing over typography, and being passionately curious about everything from evolutionary psychology to internet subcultures.</p>
+    <p>Outside of academics, you'll find me reading, obsessing over sitcoms.</p>
   </div>
 
   <footer>
