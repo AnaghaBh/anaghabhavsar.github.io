@@ -5,58 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Anagha Bhavsar</title>
   <style>
-    @font-face {
-      font-family: 'TAN Harmoni';
-      src: url('fonts/Harmoni.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
-
-    body {
-      background-colour: #190909;
-      colour: #e6dbc6;
-      margin: 0;
-      padding: 40px 20px 20px 20px;
-      font-family: Georgia, serif;
-      text-align: centre;
-    }
-
-    h1 {
-      font-family: 'TAN Harmoni', serif;
-      font-size: 7rem;
-      text-align: centre;
-      margin-bottom: 20px;
-      font-weight: 300;
-    }
-
     .contact-info {
-      text-align: centre;
-      margin-top: -10px;
-      margin-bottom: 40px;
+      text-align: center;
+      margin-top: -20px;
+      margin-bottom: 30px;
       font-size: 1rem;
       font-family: Georgia, serif;
     }
 
     .contact-info a {
-      colour: #e6dbc6;
+      color: #e6dbc6;
       text-decoration: none;
-      margin: 0 5px;
     }
 
     .contact-info a:hover {
       text-decoration: underline;
     }
+    @font-face {
+      font-family: 'TAN Harmoni';
+      src: url('fonts/Harmoni.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+     }
+
+    body {
+      background-color: #190909;
+      color: #e6dbc6;
+      margin: 0;
+      padding: 40px 20px 20px 20px;
+      font-family: Georgia, serif;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'TAN Harmoni', serif;
+      font-size: 7rem;
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
 
     .typewriter {
       font-family: Georgia, serif;
       font-size: 1.5rem;
-      text-align: centre;
+      text-align: center;
       white-space: nowrap;
       overflow: hidden;
       border-right: 2px solid #e6dbc6;
       animation: typing 4s steps(25, end) forwards, blink 0.75s step-end infinite;
-      width: 25ch;
-      margin: 0 auto 40px auto;
+      width: 25ch; /* exact width matching characters */
+      margin: 0 auto 40px auto; /* This centres the div */
+      text-align: center;       /* This centres the text inside */
       display: block;
     }
 
@@ -64,20 +63,20 @@
       font-weight: bold;
     }
 
+    /* Links for clickable words */
     .typewriter a {
       display: inline-block;
-      colour: #e6dbc6;
+      color: #e6dbc6;
       text-decoration: none;
       cursor: pointer;
     }
-
     .typewriter a:hover {
       text-decoration: underline;
     }
 
     section {
       margin-bottom: 100px;
-      padding-top: 50px;
+      padding-top: 50px; /* to offset anchor jump */
     }
 
     @keyframes typing {
@@ -86,20 +85,19 @@
     }
 
     @keyframes blink {
-      from, to { border-colour: transparent }
-      50% { border-colour: #e6dbc6; }
+      from, to { border-color: transparent }
+      50% { border-color: #e6dbc6; }
     }
   </style>
 </head>
 <body>
   <h1>Anagha Bhavsar</h1>
-
   <div class="contact-info">
-    anagha.bhavsar_ug25@ashoka.edu.in · Navi Mumbai, Maharashtra, India |
-    <a href="https://www.linkedin.com/in/anagha-bhavsar-0b0a17236/" target="_blank">LinkedIn</a> |
-    <a href="https://github.com/AnaghaBh" target="_blank">GitHub</a>
+        anagha.bhavsar_ug25@ashoka.edu.in · Navi Mumbai, Maharashtra, India |
+        <a href="https://www.linkedin.com/in/anagha-bhavsar-0b0a17236/" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/AnaghaBh" target="_blank">GitHub</a>
   </div>
-
+  
   <div class="typewriter">
     <a href="#section-i">I</a> Love De<span class="highlight"><a href="#section-coding">coding</a></span> <a href="#section-human-cognition">Human Cognition</a>
   </div>
@@ -126,6 +124,7 @@
   </section>
 
   <script>
+    
     document.querySelector('.typewriter').innerHTML = `
       <a href="#section-i">I</a> 
       <a href="#section-love">Love</a> 
