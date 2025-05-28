@@ -220,25 +220,47 @@
   </footer>
 
   <script>
-    const toggleButton = document.getElementById('toggleDarkMode');
-    const body = document.body;
+  const toggleButton = document.getElementById('toggleDarkMode');
+  const body = document.body;
 
-    function updateButtonText() {
-      if(body.classList.contains('light-mode')) {
-        toggleButton.textContent = 'Dark Mode';
-        toggleButton.setAttribute('aria-label', 'Switch to dark mode');
-      } else {
-        toggleButton.textContent = 'Light Mode';
-        toggleButton.setAttribute('aria-label', 'Switch to light mode');
-      }
+  // Load saved mode from localStorage or default to dark
+  function loadMode() {
+    const savedMode = localStorage.getItem('mode');
+    if (savedMode === 'light') {
+      body.classList.add('light-mode');
+    } else {
+      body.classList.remove('light-mode');
     }
-
-    toggleButton.addEventListener('click', () => {
-      body.classList.toggle('light-mode');
-      updateButtonText();
-    });
-
     updateButtonText();
-  </script>
+  }
+
+  // Save current mode to localStorage
+  function saveMode() {
+    if (body.classList.contains('light-mode')) {
+      localStorage.setItem('mode', 'light');
+    } else {
+      localStorage.setItem('mode', 'dark');
+    }
+  }
+
+  function updateButtonText() {
+    if (body.classList.contains('light-mode')) {
+      toggleButton.textContent = 'Dark Mode';
+      toggleButton.setAttribute('aria-label', 'Switch to dark mode');
+    } else {
+      toggleButton.textContent = 'Light Mode';
+      toggleButton.setAttribute('aria-label', 'Switch to light mode');
+    }
+  }
+
+  toggleButton.addEventListener('click', () => {
+    body.classList.toggle('light-mode');
+    updateButtonText();
+    saveMode();
+  });
+
+  loadMode();
+</script>
+
 </body>
 </html>
