@@ -21,39 +21,78 @@
       text-align: center;
       animation: fadeIn 1.5s ease-out;
       transition: background-color 0.5s ease, color 0.5s ease;
-      position: relative;
       min-height: 100vh;
+      position: relative;
     }
 
     h1 {
       font-family: 'TAN Harmoni', serif;
       font-weight: 300;
       font-size: 7rem;
+      margin-top: 100px;
       margin-bottom: 40px;
       text-align: center;
     }
 
-    /* Nav bar on right side, vertical */
-    .sidebar {
+    /* Container for toggle + nav horizontally aligned top right */
+    .top-right-container {
       position: fixed;
-      top: 70px; /* below toggle button */
+      top: 20px;
       right: 20px;
       display: flex;
-      flex-direction: column;
-      gap: 20px;
+      align-items: center;
+      gap: 25px;
       font-family: Georgia, serif;
       font-size: 1.1rem;
-      text-align: right;
       z-index: 1000;
     }
 
-    .sidebar a {
+    #toggleDarkMode {
+      background: none;
+      border: 2px solid #e6dbc6;
+      color: #e6dbc6;
+      padding: 8px 16px;
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      width: 120px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    #toggleDarkMode:hover {
+      background-color: #e6dbc6;
+      color: #190909;
+      border-color: #e6dbc6;
+    }
+
+    body.light-mode #toggleDarkMode {
+      background-color: #333;
+      color: #f4f1e7;
+      border-color: #333;
+    }
+
+    body.light-mode #toggleDarkMode:hover {
+      background-color: #555;
+      color: #f4f1e7;
+      border-color: #555;
+    }
+
+    nav.sidebar {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav.sidebar a {
       color: #e6dbc6;
       text-decoration: none;
       transition: text-shadow 0.3s ease;
+      white-space: nowrap;
     }
 
-    .sidebar a:hover {
+    nav.sidebar a:hover {
       text-shadow: 0 0 5px #e6dbc6;
       text-decoration: underline;
     }
@@ -111,7 +150,6 @@
       font-family: Georgia, serif;
     }
 
-    /* Fade in animation */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -128,12 +166,12 @@
       color: #333;
     }
 
-    body.light-mode .sidebar a,
+    body.light-mode nav.sidebar a,
     body.light-mode .contact-info a {
       color: #333;
     }
 
-    body.light-mode .sidebar a:hover,
+    body.light-mode nav.sidebar a:hover,
     body.light-mode .contact-info a:hover {
       text-shadow: none;
       text-decoration: underline;
@@ -146,53 +184,19 @@
       box-shadow: 0 0 10px #bbb inset;
       border-right-color: #333;
     }
-
-    /* Toggle button styles */
-    #toggleDarkMode {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: none;
-      border: 2px solid #e6dbc6;
-      color: #e6dbc6;
-      padding: 8px 16px;
-      font-family: Georgia, serif;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 6px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      z-index: 1001;
-    }
-
-    #toggleDarkMode:hover {
-      background-color: #e6dbc6;
-      color: #190909;
-      border-color: #e6dbc6;
-    }
-
-    body.light-mode #toggleDarkMode {
-      background-color: #333;
-      color: #f4f1e7;
-      border-color: #333;
-    }
-
-    body.light-mode #toggleDarkMode:hover {
-      background-color: #555;
-      color: #f4f1e7;
-      border-color: #555;
-    }
   </style>
 </head>
 <body>
-  <button id="toggleDarkMode" aria-label="Toggle dark mode">Light Mode</button>
-
-  <nav class="sidebar" role="navigation" aria-label="Primary navigation">
-    <a href="#">About</a>
-    <a href="#">Experience</a>
-    <a href="#">Projects</a>
-    <a href="#">Interests</a>
-    <a href="#">CV</a>
-  </nav>
+  <div class="top-right-container">
+    <button id="toggleDarkMode" aria-label="Toggle dark mode">Light Mode</button>
+    <nav class="sidebar" role="navigation" aria-label="Primary navigation">
+      <a href="#">About</a>
+      <a href="#">Experience</a>
+      <a href="#">Projects</a>
+      <a href="#">Interests</a>
+      <a href="#">CV</a>
+    </nav>
+  </div>
 
   <h1>Anagha Bhavsar</h1>
 
