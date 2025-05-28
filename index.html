@@ -38,7 +38,9 @@
       border-right: 2px solid #e6dbc6;
       animation: typing 4s steps(25, end) forwards, blink 0.75s step-end infinite;
       width: 25ch; /* exact width matching characters */
-      margin-bottom: 40px;
+      margin: 0 auto 40px auto; /* This centres the div */
+      text-align: center;       /* This centres the text inside */
+      display: block;
     }
 
     .highlight {
@@ -47,6 +49,7 @@
 
     /* Links for clickable words */
     .typewriter a {
+      display: inline-block;
       color: #e6dbc6;
       text-decoration: none;
       cursor: pointer;
