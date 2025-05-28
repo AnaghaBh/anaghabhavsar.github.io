@@ -8,89 +8,180 @@
     @font-face {
       font-family: 'TAN Harmoni';
       src: url('fonts/Harmoni.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
     }
 
     body {
       background-color: #190909;
       color: #e6dbc6;
-      font-family: Georgia, serif;
       margin: 0;
-      padding: 0;
+      padding: 40px 20px 20px 20px;
+      font-family: Georgia, serif;
+      text-align: center;
+      animation: fadeIn 1.5s ease-out;
+      transition: background-color 0.5s ease, color 0.5s ease;
     }
 
-    /* NAVIGATION BAR */
+    h1 {
+      font-family: 'TAN Harmoni', serif;
+      font-weight: 300;
+      font-size: 7rem;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
     .navbar {
       display: flex;
       justify-content: center;
       gap: 40px;
-      background-color: #190909;
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      font-size: 1rem;
-      border-bottom: 1px solid #e6dbc620;
+      font-family: Georgia, serif;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
     }
 
     .navbar a {
       color: #e6dbc6;
       text-decoration: none;
-      font-family: Georgia, serif;
-      transition: opacity 0.3s;
+      transition: text-shadow 0.3s ease;
     }
 
     .navbar a:hover {
-      opacity: 0.7;
-    }
-
-    h1 {
-      font-family: 'TAN Harmoni', serif;
-      font-size: 6rem;
-      font-weight: 300;
-      text-align: center;
-      margin: 40px 0 10px;
+      text-shadow: 0 0 5px #e6dbc6;
+      text-decoration: underline;
     }
 
     .contact-info {
-      font-size: 1rem;
       text-align: center;
-      margin-bottom: 60px;
+      margin-top: -20px;
+      margin-bottom: 30px;
+      font-size: 1rem;
+      font-family: Georgia, serif;
     }
 
     .contact-info a {
       color: #e6dbc6;
       text-decoration: none;
+      transition: text-shadow 0.3s ease;
     }
 
     .contact-info a:hover {
+      text-shadow: 0 0 5px #e6dbc6;
       text-decoration: underline;
     }
 
     .typewriter {
-      font-family: Georgia, serif;
+      font-family: 'Courier New', Courier, monospace;
       font-size: 1.5rem;
       text-align: left;
-      margin: 0 auto;
       max-width: 600px;
+      margin: 0 auto;
       white-space: nowrap;
       overflow: hidden;
-      border-right: 2px solid #e6dbc6;
-      animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+      border-right: 3px solid #e6dbc6;
+      animation: typing 4s steps(35, end) forwards, blink 0.75s step-end infinite;
+      padding: 20px;
+      border-radius: 6px;
+      background-color: #2a1a1a;
+      box-shadow: 0 0 10px #4a2c2c inset;
     }
 
     @keyframes typing {
       from { width: 0 }
-      to { width: 100% }
+      to { width: 35ch }
     }
 
     @keyframes blink {
-      50% { border-color: transparent; }
+      from, to { border-color: transparent }
+      50% { border-color: #e6dbc6; }
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0 20px;
+      font-size: 0.9rem;
+      color: #9a8977;
+      font-family: Georgia, serif;
+    }
+
+    /* Fade in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Light mode styles */
+    body.light-mode {
+      background-color: #f4f1e7;
+      color: #333;
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
+
+    body.light-mode h1 {
+      color: #333;
+    }
+
+    body.light-mode .navbar a,
+    body.light-mode .contact-info a {
+      color: #333;
+    }
+
+    body.light-mode .navbar a:hover,
+    body.light-mode .contact-info a:hover {
+      text-shadow: none;
+      text-decoration: underline;
+    }
+
+    body.light-mode .typewriter {
+      background-color: #eae6dc;
+      color: #222;
+      border-color: #333;
+      box-shadow: 0 0 10px #bbb inset;
+      border-right-color: #333;
+    }
+
+    /* Toggle button styles */
+    #toggleDarkMode {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: 2px solid #e6dbc6;
+      color: #e6dbc6;
+      padding: 8px 16px;
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      z-index: 1000;
+    }
+
+    #toggleDarkMode:hover {
+      background-color: #e6dbc6;
+      color: #190909;
+      border-color: #e6dbc6;
+    }
+
+    body.light-mode #toggleDarkMode {
+      background-color: #333;
+      color: #f4f1e7;
+      border-color: #333;
+    }
+
+    body.light-mode #toggleDarkMode:hover {
+      background-color: #555;
+      color: #f4f1e7;
+      border-color: #555;
     }
   </style>
 </head>
 <body>
+  <button id="toggleDarkMode" aria-label="Toggle dark mode">Light Mode</button>
 
-  <div class="navbar">
+  <h1>Anagha Bhavsar</h1>
+
+  <div class="navbar" role="navigation" aria-label="Primary">
     <a href="#">About</a>
     <a href="#">CV</a>
     <a href="#">Projects</a>
@@ -98,17 +189,41 @@
     <a href="#">Blog</a>
   </div>
 
-  <h1>Anagha Bhavsar</h1>
-
   <div class="contact-info">
     anagha.bhavsar_ug25@ashoka.edu.in · Navi Mumbai, Maharashtra, India |
-    <a href="https://www.linkedin.com/in/anagha-bhavsar-0b0a17236/" target="_blank">LinkedIn</a> |
-    <a href="https://github.com/AnaghaBh" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/anagha-bhavsar-0b0a17236/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+    <a href="https://github.com/AnaghaBh" target="_blank" rel="noopener noreferrer">GitHub</a>
   </div>
 
-  <div class="typewriter">
+  <div class="typewriter" aria-label="Code typing animation">
     Hello! I am Anagha. I love decoding human cognition.
   </div>
 
+  <footer>
+    © 2025 Anagha Bhavsar · All rights reserved
+  </footer>
+
+  <script>
+    const toggleButton = document.getElementById('toggleDarkMode');
+    const body = document.body;
+
+    function updateButtonText() {
+      if(body.classList.contains('light-mode')) {
+        toggleButton.textContent = 'Dark Mode';
+        toggleButton.setAttribute('aria-label', 'Switch to dark mode');
+      } else {
+        toggleButton.textContent = 'Light Mode';
+        toggleButton.setAttribute('aria-label', 'Switch to light mode');
+      }
+    }
+
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('light-mode');
+      updateButtonText();
+    });
+
+    // Set initial button text on load
+    updateButtonText();
+  </script>
 </body>
 </html>
