@@ -101,25 +101,6 @@
       text-decoration: underline;
     }
 
-    .contact-info {
-      text-align: center;
-      margin-top: -20px;
-      margin-bottom: 30px;
-      font-size: 1rem;
-      font-family: Georgia, serif;
-    }
-
-    .contact-info a {
-      color: #e6dbc6;
-      text-decoration: none;
-      transition: text-shadow 0.3s ease;
-    }
-
-    .contact-info a:hover {
-      text-shadow: 0 0 5px #e6dbc6;
-      text-decoration: underline;
-    }
-
     .content {
       max-width: 700px;
       margin: 0 auto;
@@ -148,13 +129,11 @@
       color: #333;
     }
 
-    body.light-mode nav.sidebar a,
-    body.light-mode .contact-info a {
+    body.light-mode nav.sidebar a {
       color: #333;
     }
 
-    body.light-mode nav.sidebar a:hover,
-    body.light-mode .contact-info a:hover {
+    body.light-mode nav.sidebar a:hover {
       text-shadow: none;
       text-decoration: underline;
     }
@@ -168,7 +147,7 @@
 <body>
   <div class="top-right-container">
     <nav class="sidebar" role="navigation" aria-label="Primary navigation">
-      <a href="about.html">About</a>
+      <a href="index.html">Home</a>
       <a href="experience.html">Experience</a>
       <a href="projects.html">Projects</a>
       <a href="interests.html">Interests</a>
@@ -178,12 +157,6 @@
   </div>
 
   <h2>About Me</h2>
-
-  <div class="contact-info">
-    anagha.bhavsar_ug25@ashoka.edu.in · Navi Mumbai, Maharashtra, India |
-    <a href="https://www.linkedin.com/in/anagha-bhavsar-0b0a17236/" target="_blank">LinkedIn</a> |
-    <a href="https://github.com/AnaghaBh" target="_blank">GitHub</a>
-  </div>
 
   <div class="content">
     <p>Hello! I'm Anagha, a curious learner who loves understanding how humans think, learn, and make decisions. My journey blends computer science, psychology, and neuroscience.</p>
@@ -200,7 +173,7 @@
     const body = document.body;
 
     function updateButtonText() {
-      if(body.classList.contains('light-mode')) {
+      if (body.classList.contains('light-mode')) {
         toggleButton.textContent = 'Dark Mode';
         toggleButton.setAttribute('aria-label', 'Switch to dark mode');
       } else {
